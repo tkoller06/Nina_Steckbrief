@@ -142,8 +142,8 @@ strong {
     }
 
     main img {
-        width: auto;
-        max-height: 50%;
+        max-width: 75%;
+        height: auto;
         margin-bottom: 1.5rem;
         border-radius: 18px;
     }
