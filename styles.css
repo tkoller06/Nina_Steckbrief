@@ -1,163 +1,125 @@
-/* ===== Grundlayout ===== */
-body {
-    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-    color: #333;
-    margin: 0;
-    padding: 1rem; /* sorgt für sichtbaren Rand auch auf kleinen Bildschirmen */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+*{box-sizing:border-box}
+body{
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif;
+  background:linear-gradient(135deg,#e3f2fd 0%,#f3e5f5 100%);
+  color:#333;
+  margin:0;
+  padding:1rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
 }
-
-/* ===== Header ===== */
-header {
-    background: linear-gradient(90deg, #b39ddb, #80deea);
-    width: 100%;
-    text-align: center;
-    padding: 1.5rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+header{
+  background:linear-gradient(90deg,#b39ddb,#80deea);
+  width:100%;
+  text-align:center;
+  padding:1.5rem 0;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
-
-header h1 {
-    font-size: 2.2rem;
-    margin: 0;
-    letter-spacing: 1px;
+header h1{
+  font-size:2.2rem;
+  margin:0;
+  letter-spacing:1px;
 }
-
-/* ===== Hauptbereich mit gemeinsamem Rahmen ===== */
-main {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    gap: 2rem;
-    width: 85%; /* kleiner gemacht, damit Rand sichtbar bleibt */
-    max-width: 1000px;
-    margin-top: 2rem;
-
-    /* großer Rahmen */
-    border: 4px solid #a489d3;
-    border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    padding: 2.5rem;
-    backdrop-filter: blur(10px);
+main{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  gap:2rem;
+  width:85%;
+  max-width:1000px;
+  margin-top:2rem;
+  border:none;
+  border-radius:25px;
+  box-shadow:none;
+  padding:1rem;
+  background:transparent;
 }
-
-/* ===== Foto ===== */
-main img {
-    height: 400px;
-    width: auto;
-    object-fit: contain;
-    border-radius: 15px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+main img{
+  display:block;
+  width:100%;
+  max-width:480px;
+  height:auto;
+  max-height:60vh;
+  object-fit:contain;
+  border-radius:12px;
+  box-shadow:none;
+  transition:transform 150ms ease,width 150ms ease,height 150ms ease;
+  -webkit-tap-highlight-color:transparent;
+  outline:none;
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-touch-callout:none;
+  touch-action:manipulation;
 }
-
-/* ===== Textbereich ===== */
-section {
-    flex: 1.2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 1rem;
+main a,main a img,main button,main figure{
+  background:transparent;
+  border:none;
+  padding:0;
+  margin:0;
+  display:block;
 }
-
-/* ===== Überschrift ===== */
-h2 {
-    color: #6a1b9a;
-    border-bottom: 2px solid #80deea;
-    display: inline-block;
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
+section{
+  flex:1.2;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 1rem;
+  background:transparent;
 }
-
-/* ===== Liste ===== */
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    line-height: 1.6;
+h2{
+  color:#6a1b9a;
+  border-bottom:2px solid #80deea;
+  display:inline-block;
+  padding-bottom:0.3rem;
+  margin-bottom:1rem;
+  background:transparent;
 }
-
-li {
-    margin-bottom: 0.4rem;
+ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  line-height:1.6;
 }
-
-strong {
-    color: #4a148c;
+li{margin-bottom:0.4rem}
+strong{color:#4a148c}
+@media (max-width:1500px){
+  main{
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    width:95%;
+    padding:1.5rem;
+    gap:2rem;
+    border-radius:25px;
+    background:transparent;
+  }
+  main img{
+    flex:1;
+    max-width:45%;
+    height:auto;
+    border-radius:12px;
+    max-height:60vh;
+  }
+  section{flex:1;text-align:left;padding:0 1rem}
+  h2{font-size:1.6rem}
+  ul{font-size:1.05rem}
 }
-
-/* ====== Responsive Layout ====== */
-
-/* --- Tablet (iPad) --- */
-@media (max-width: 1500px) {
-    main {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 95%;
-        padding: 3rem 2rem;
-        gap: 2rem;
-        border-width: 4px;
-        border-radius: 25px;
-    }
-
-    main img {
-        flex: 1;
-        max-width: 45%;
-        height: auto;
-        border-radius: 18px;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    }
-
-    section {
-        flex: 1;
-        text-align: left;
-        padding: 0 1rem;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    ul {
-        font-size: 1.05rem;
-    }
-}
-
-/* --- Handy --- */
-@media (max-width: 600px) {
-    body {
-        padding: 1.2rem;
-    }
-
-    main {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 85%;
-        height: 100%;
-        padding: 2rem;
-        border-width: 3px;
-        border-radius: 20px;
-    }
-
-    main img {
-        max-width: 90%;
-        max-height: 50vh;
-        object-fit: contain;
-    }
-
-    section {
-        text-align: left;
-        padding: 1rem 0;
-    }
-
-    h2 {
-        font-size: 1.4rem;
-    }
-
-    ul {
-        font-size: 1rem;
-    }
+@media (max-width:600px){
+  body{padding:1.2rem}
+  main{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    width:85%;
+    height:auto;
+    padding:1rem;
+    border-radius:20px;
+    background:transparent;
+  }
+  main img{max-width:90%;max-height:50vh;object-fit:contain}
+  section{text-align:left;padding:1rem 0}
+  h2{font-size:1.4rem}
+  ul{font-size:1rem}
 }
