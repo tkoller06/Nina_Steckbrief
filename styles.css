@@ -48,7 +48,7 @@ main {
 main img {
     height: 400px;
     width: auto;
-    object-fit: scale-down;
+    object-fit: contain;
     border-radius: 15px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
 }
@@ -136,16 +136,16 @@ strong {
         align-items: center;
         text-align: center;
         width: 85%;
+        height: 100%;
         padding: 2rem;
         border-width: 3px;
         border-radius: 20px;
     }
 
     main img {
-        max-width: 85%;
-        height: auto;
-        margin-bottom: 1.5rem;
-        border-radius: 18px;
+        max-width: 90%;
+        max-height: 50vh;
+        object-fit: contain;
     }
 
     section {
