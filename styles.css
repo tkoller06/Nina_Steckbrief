@@ -104,8 +104,8 @@ strong {
 
     main img {
         flex: 1;
-        max-width: 85%;
-        height: 100%;
+        max-width: 45%;
+        height: auto;
         border-radius: 18px;
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     }
@@ -142,8 +142,8 @@ strong {
     }
 
     main img {
-        max-width: auto;
-        height: 100%;
+        max-width: 85%;
+        height: auto;
         margin-bottom: 1.5rem;
         border-radius: 18px;
     }
